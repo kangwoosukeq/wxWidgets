@@ -469,6 +469,9 @@ class LexerCPP : public ILexerWithSubStyles {
 
 	SymbolValue val = preprocessorDefinitionsStart["uninit bug"]; // api misuse bug
 
+	std::map<int, int> m;
+	int x = m[3];
+
 	OptionsCPP options;
 	OptionSetCPP osCPP;
 	EscapeSequence escapeSeq;
