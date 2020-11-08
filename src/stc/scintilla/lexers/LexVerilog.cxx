@@ -198,6 +198,9 @@ class LexerVerilog : public ILexerWithSubStyles {
 	};
 	typedef std::map<std::string, SymbolValue> SymbolTable;
 	SymbolTable preprocessorDefinitionsStart;
+
+	SymbolValue val = preprocessorDefinitionsStart["uninit bug"]; // api misuse bug
+
 	OptionsVerilog options;
 	OptionSetVerilog osVerilog;
 	enum { activeFlag = 0x40 };
