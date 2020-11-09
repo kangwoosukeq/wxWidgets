@@ -1461,6 +1461,9 @@ void LexerCPP::EvaluateTokens(std::vector<std::string> &tokens, const SymbolTabl
 						// Create map of argument name to value
 						std::vector<std::string> argumentNames = StringSplit(it->second.arguments, ',');
 						std::map<std::string, std::string> arguments;
+
+						std::string uninit_val = arguments["arguments"]; // api misuse bug
+
 						size_t arg = 0;
 						size_t tok = i+2;
 						while ((tok < tokens.size()) && (arg < argumentNames.size()) && (tokens.at(tok) != ")")) {
